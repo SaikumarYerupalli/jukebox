@@ -1,0 +1,29 @@
+version: "2"
+services:
+  jukebox-db:
+    image: mysql:8
+    ports:
+      - "3038:3036"
+    networks:
+      - jukebox-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=jukebox
+      - MYSQL_USER=jukeboxuser
+      - MYSQL_PASSWORD=jukeboxpassword
+    volumes:
+      - jukeboxdbmount:/var/lib/mysql      
+  
+  jukebox-app:
+    image: syerupal/jukebox:2
+    ports:
+      - "9090:9090"
+    networks:
+      - jukebox-network
+    depends_on:
+      - jukebox-db
+networks:
+  jukebox-network: 
+
+volumes:
+    jukeboxdbmount:
