@@ -70,7 +70,6 @@ public class Album {
 	
 	@ManyToMany(fetch =FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinTable(name="album_musicians",joinColumns= { @JoinColumn(name = "album_id")},inverseJoinColumns = {@JoinColumn(name="musician_id")})
-	@NotNull
     private List<Musician> musicians;
 	
 	
