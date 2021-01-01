@@ -11,77 +11,77 @@ many to many i.e; one ablum can have one or more musicians and vice versa
 
 # Rest api details
 
-1) Description : API to create music album records
-   URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/album/create
-   Method : POST
-   Request body format : JSON
-   Sample Request body : 
+1)   - Description : API to create music album records
+     - URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/album/create
+     - Method : POST
+     - Request body format : JSON
+     - Sample Request body : 
                         {
-    "name" :"",
-    "type":"",
-    "creationDate":"",
-    "price":,
-    "description":"",
-    "musicians":[{
-        "name" : "",
-        "musicType":"Vocalist/Instrumentalist"
-    }]
-  }
+                            "name" :"",
+                            "type":"",
+                            "creationDate":"",
+                            "price":,
+                            "description":"",
+                            "musicians":[{
+                                "name" : "",
+                                "musicType":"Vocalist/Instrumentalist"
+                            }]
+                          }
   
-  Staus Code : 200 (For success)
-               400 (If there is any constraint violation)
+      - Staus Code : - 200 (For success)
+                     - 400 (If there is any constraint violation)
                
-2) Description: API to create musician records
-   URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/musician/create
-   Method : POST
-   Request body format : JSON
-   Sample Request body : 
-                       {   
-    "musicType":"Vocalist/Insturmentalist",
-    "name" : "",
-      "albums" : [{
-        "name" : "",
-        "type" : "",
-        "price" : ,
-        "description":"",
-        "creationDate":""
-      }]
-}
-  Staus Code : 200 (For success)
-               400 (If there is any constraint violation)
+2)    -  Description: API to create musician records
+      -  URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/musician/create
+      -  Method : POST
+      -  Request body format : JSON
+      -  Sample Request body : 
+                                   {   
+                "musicType":"Vocalist/Insturmentalist",
+                "name" : "",
+                  "albums" : [{
+                    "name" : "",
+                    "type" : "",
+                    "price" : ,
+                    "description":"",
+                    "creationDate":""
+                  }]
+            }
+      -  Staus Code : - 200 (For success)
+                      - 400 (If there is any constraint violation)
                
- 3) Description: API to retrieve the list of Music albums by a musician sorted by Date of creation in
-  ascending order (i.e Oldest first)
-   URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/album/list
-   Method : GET
-   Query Params : 1) musician (required)
-                  2) orderby=date
+ 3)   -  Description: API to retrieve the list of Music albums by a musician sorted by Date of creation in
+         ascending order (i.e Oldest first)
+      -  URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/album/list
+      -  Method : GET
+      -  Query Params : - musician (required)
+                        - orderby=date
    
-   Response body format : JSON
+      -  Response body format : JSON
    
-  Staus Code : 200 (For success)
-               404 (If there is no musician with that name)
+      -  Staus Code : - 200 (For success)
+                      - 404 (If there is no musician with that name)
    
-  4) Description: API to retrieve the list of Music albums by a musician sorted by price in ascending order
-    (i.e Lowest first)
-   URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/album/list
-   Method : GET
-   Query Params : 1) musician (required)
-                  2) orderby=price
+  4)  -  Description: API to retrieve the list of Music albums by a musician sorted by price in ascending order
+         (i.e Lowest first)
+      -  URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/album/list
+      - Method : GET
+      - Query Params : - musician (required)
+                        - orderby=price
    
-   Response body format : JSON
+      - Response body format : JSON
    
-  Staus Code : 200 (For success)
-               404 (If there is no musician with that name)
+      -  Staus Code : - 200 (For success)
+                      - 404 (If there is no musician with that name)
               
-   5) Description: API to retrieve the list of musicians for a music album sorted by musician's name
-   URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/musician/list
-   Method : GET
-   Query Params : 1) albumname (required)
-   Response body format : JSON
+   5)    -  Description: API to retrieve the list of musicians for a music album sorted by musician's name
+         - URL : http://{HOSTIP}:{PORT}/jukeboxrest/v1/musician/list
+         -  Method : GET
+         -  Query Params : albumname (required)
+         - Response body format : JSON
    
-  Staus Code : 200 (For success)
-               404 (If there is no album with that name)
+         - Staus Code : -  200 (For success)
+                        -  404 (If there is no album with that name)
                
                
    # Note
